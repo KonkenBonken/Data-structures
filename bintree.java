@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 class bintree {
   public static void main(String[] args) {
     Tree tree = new Tree();
@@ -13,6 +14,24 @@ class Tree {
       root = node;
      else
       root.addNode(node);
+  }
+  public ArrayList<Node> traverse(boolean duplicates) {
+    ArrayList<Node> list = new ArrayList<Node>();
+    if (root == null)
+      return list;
+     // System.out.println("no root");
+    else {
+      ArrayList<Node> sorted = root.traverse(list);
+      if (!duplicates) return sorted;
+
+      ArrayList<Node> nums = new ArrayList<Node>();
+      for (Node node : sorted) {
+        for (int i = 1; i <= node.count; i++) {
+          nums.add(node);
+        }
+      }
+      return nums;
+    }
   }
 }
 class Node {
@@ -36,5 +55,18 @@ class Node {
         right.addNode(node);
     } else
       count++;
+  }
+  public ArrayList<Node> traverse(ArrayList<Node> list) {
+    if (left != null) {
+      left.traverse(list);
+    }
+    list.add(this);
+    // System.out.println(value);
+    if (right != null) {
+      right.traverse(list);
+    } else
+      return list;
+      // System.out.println("stop");
+    return list;
   }
 }
