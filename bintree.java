@@ -15,6 +15,9 @@ class Tree {
      else
       root.addNode(node);
   }
+  public void clear() {
+    root = null;
+  }
   public ArrayList<Node> traverse(boolean duplicates) {
     ArrayList<Node> list = new ArrayList<Node>();
     if (root == null)
@@ -39,6 +42,23 @@ class Tree {
     for (Node node : nodes)
       nums.add(node.value);
     return nums;
+  }
+  public Node findMedian(boolean duplicates) {
+  ArrayList<Node> sorted = traverse(duplicates);
+     return sorted.get(sorted.size() / 2);
+  }
+  public int findMedianValue(boolean duplicates) {
+     return findMedian(duplicates).value;
+  }
+  public void balance() {
+    ArrayList<Integer> values = traverseValue(true);
+    Node median = findMedian(false);
+    int medianIndex = values.indexOf(median.value);
+    values.remove(medianIndex);
+    values.add(0, median.value);
+    clear();
+    for (int value : values)
+      addNode(new Node(value));
   }
 }
 class Node {
