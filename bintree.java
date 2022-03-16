@@ -33,6 +33,13 @@ class Tree {
       return nums;
     }
   }
+  public ArrayList<Integer> traverseValue(boolean duplicates) {
+    ArrayList<Node> nodes = traverse(duplicates);
+    ArrayList<Integer> nums = new ArrayList<Integer>();
+    for (Node node : nodes)
+      nums.add(node.value);
+    return nums;
+  }
 }
 class Node {
   Node left;
