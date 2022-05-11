@@ -30,4 +30,18 @@ export class LinkedList {
 			prev = prev.next;
 		}
 	}
+
+	toArray() {
+		const result = [this.root.value];
+		let last = this.root;
+		do {
+			last = last.next;
+			result.push(last.value);
+		} while (last.next);
+		return result;
+	}
+
+	*[Symbol.iterator]() {
+		yield* this.toArray()
+	}
 }
