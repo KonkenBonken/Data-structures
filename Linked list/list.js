@@ -18,6 +18,14 @@ class ListNode {
 	get next() {
 		return this._next;
 	}
+
+	reverse() {
+		if (this.next) var array = this.next.reverse();
+		else return [];
+
+		array.push(this.value);
+		return array;
+	}
 }
 
 export class LinkedList {
@@ -47,5 +55,9 @@ export class LinkedList {
 
 	toString() {
 		return this.toArray().toString()
+	}
+
+	reverse() {
+		return this.root.reverse();
 	}
 }
