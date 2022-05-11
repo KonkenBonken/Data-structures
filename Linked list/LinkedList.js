@@ -46,4 +46,11 @@ export class LinkedList {
 		this.last.next = node;
 		return this.length;
 	}
+
+	find(value) {
+		for (var node = this.root; node.value !== value; node = node.next);
+		if (node.value !== value) return undefined
+		return node;
+
+	}
 }

@@ -8,6 +8,7 @@ const log = {
 	reversed: list.reverse(),
 	last: list.last,
 	length: list.length,
+	find: list.find(4),
 }
 
 list.root.next.removeNext();
