@@ -7,6 +7,7 @@ const log = {
 	stringified: '' + list,
 	reversed: list.reverse(),
 	last: list.last,
+	length: list.length,
 }
 
 list.root.next.removeNext();

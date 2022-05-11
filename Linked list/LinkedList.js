@@ -11,6 +11,15 @@ export class LinkedList {
 		}
 	}
 
+	get length() {
+		return this.toArray().length
+	}
+
+	get last() {
+		for (var node = this.root; node.next; node = node.next);
+		return node;
+	}
+
 	toArray() {
 		const result = [this.root.value];
 		let last = this.root;
@@ -29,16 +38,12 @@ export class LinkedList {
 		return this.toArray().toString()
 	}
 
-	get last() {
-		for (var node = this.root; node.next; node = node.next);
-		return node;
-	}
-
 	reverse() {
 		return this.root.reverse();
 	}
 
 	push(node) {
 		this.last.next = node;
+		return this.length;
 	}
 }
