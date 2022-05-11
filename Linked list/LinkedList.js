@@ -37,7 +37,7 @@ export class LinkedList {
 	}
 
 	reverse() {
-		return this.root.reverse();
+		return new LinkedList(this.root.reverse());
 	}
 
 	push(...nodes) {

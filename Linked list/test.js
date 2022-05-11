@@ -6,7 +6,7 @@ const log = {
 	list,
 	traversed: [...list],
 	stringified: '' + list,
-	reversed: list.reverse(),
+	reversed: '' + list.reverse(),
 	last: +list.last,
 	length: list.length,
 	find: +list.find(4),
