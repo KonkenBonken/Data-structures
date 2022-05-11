@@ -4,11 +4,9 @@ export class LinkedList {
 	constructor(array) {
 		if (!Array.isArray(array) || !array.length) throw new Error('Input is not an array');
 
-		let prev = this.root = new ListNode(array[0]);
-		for (var item of array.slice(1)) {
-			prev.next = item;
-			prev = prev.next;
-		}
+		this.root = new ListNode(array[0]);
+		for (const item of array.slice(1))
+			this.push(item);
 	}
 
 	get length() {
@@ -48,6 +46,12 @@ export class LinkedList {
 				this.push(node)
 		else
 			this.last.next = nodes[0];
+		return this.length;
+	}
+
+	merge(list) {
+		if (!(list instanceof LinkedList)) throw new Error('Input is not a Linked List');
+		this.last.next = list.root;
 		return this.length;
 	}
 

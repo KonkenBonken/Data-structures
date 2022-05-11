@@ -21,4 +21,7 @@ list.push(12, 13, 14);
 log.pushed = '' + list;
 
 
+list.merge(new LinkedList([101, 102, 103]))
+log.merged = '' + list;
+
 console.log(log);
