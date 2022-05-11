@@ -19,13 +19,17 @@ export class LinkedList {
 	}
 
 	toArray() {
-		const result = [this.root.value];
+		const result = [this.root];
 		let last = this.root;
 		do {
 			last = last.next;
-			result.push(last.value);
+			result.push(last);
 		} while (last.next);
 		return result;
+	}
+
+	toValueArray() {
+		return this.toArray().map(node => node.value);
 	}
 
 	*[Symbol.iterator]() {
@@ -33,7 +37,7 @@ export class LinkedList {
 	}
 
 	toString() {
-		return this.toArray().toString()
+		return this.toValueArray().toString()
 	}
 
 	reverse() {
