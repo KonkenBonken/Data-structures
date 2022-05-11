@@ -9,6 +9,7 @@ const log = {
 	last: list.last,
 	length: list.length,
 	find: list.find(4),
+	fourth: list.at(3)
 }
 
 list.root.next.removeNext();
