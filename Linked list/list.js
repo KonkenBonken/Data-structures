@@ -44,4 +44,8 @@ export class LinkedList {
 	*[Symbol.iterator]() {
 		yield* this.toArray()
 	}
+
+	toString() {
+		return this.toArray().toString()
+	}
 }
