@@ -1,9 +1,10 @@
 import { LinkedList } from './LinkedList.js';
+import { DoublyLinkedList } from './DoublyLinkedList.js';
 
 const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const list = new LinkedList(array);
-const log = {
-	list,
+let list = new LinkedList(array);
+console.log(list);
+let log = {
 	traversed: [...list],
 	stringified: '' + list,
 	reversed: '' + list.reverse(),
@@ -25,3 +26,7 @@ list.merge(new LinkedList([101, 102, 103]))
 log.merged = '' + list;
 
 console.log(log);
+
+list = new DoublyLinkedList(array);
+
+console.log(list);
