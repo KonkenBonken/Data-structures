@@ -9,4 +9,7 @@ const log = {
 	last: list.last,
 }
 
+list.root.next.removeNext();
+log.removed = '' + list;
+
 console.log(log);

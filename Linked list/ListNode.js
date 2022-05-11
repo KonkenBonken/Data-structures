@@ -26,4 +26,11 @@ export class ListNode {
 		array.push(this.value);
 		return array;
 	}
+
+	removeNext() {
+		if (!this.next) return;
+		if (this.next.next)
+			this.next = this.next.next;
+		else this.next = undefined;
+	}
 }
