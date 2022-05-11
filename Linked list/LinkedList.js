@@ -42,8 +42,12 @@ export class LinkedList {
 		return this.root.reverse();
 	}
 
-	push(node) {
-		this.last.next = node;
+	push(...nodes) {
+		if (nodes.length > 1)
+			for (const node of nodes)
+				this.push(node)
+		else
+			this.last.next = nodes[0];
 		return this.length;
 	}
 
