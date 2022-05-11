@@ -30,9 +30,7 @@ export class LinkedList {
 	}
 
 	get last() {
-		let node = this.root;
-		while (node.next)
-			node = node.next;
+		for (var node = this.root; node.next; node = node.next);
 		return node;
 	}
 
