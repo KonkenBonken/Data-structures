@@ -19,6 +19,10 @@ export class ListNode {
 		return this._next;
 	}
 
+	valueOf() {
+		return +this.value
+	}
+
 	reverse() {
 		if (this.next) var array = this.next.reverse();
 		else return [];

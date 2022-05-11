@@ -6,10 +6,10 @@ const log = {
 	traversed: [...list],
 	stringified: '' + list,
 	reversed: list.reverse(),
-	last: list.last,
+	last: +list.last,
 	length: list.length,
-	find: list.find(4),
-	fourth: list.at(3)
+	find: +list.find(4),
+	fourth: +list.at(3)
 }
 
 list.root.next.removeNext();
