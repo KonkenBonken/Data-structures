@@ -57,6 +57,13 @@ export class LinkedList {
 		return this.toArray().toString()
 	}
 
+	get last() {
+		let node = this.root;
+		while (node.next)
+			node = node.next;
+		return node;
+	}
+
 	reverse() {
 		return this.root.reverse();
 	}
